@@ -1,12 +1,12 @@
 package src.table.actions;
 
 import src.enums.Condition;
-import src.innerFuncs.QualityChange;
+import src.innerfuncs.QualityChange;
 import src.interfaces.Describing;
 import src.objects.Action;
 import src.objects.Item;
 import src.objects.Person;
-import src.innerFuncs.*;
+import src.innerfuncs.*;
 
 public class PoopWakeUp extends Action implements Describing {
     public void poopWakeUp(Person p1, Item i1){

@@ -1,9 +1,9 @@
 package src.table.actions;
 
 import src.enums.Condition;
-import src.innerFuncs.QualityChange;
-import src.innerFuncs.InventoryChanger;
-import src.innerFuncs.ItemDamage;
+import src.innerfuncs.QualityChange;
+import src.innerfuncs.InventoryChanger;
+import src.innerfuncs.ItemDamage;
 import src.objects.Item;
 import src.objects.Person;
 import src.interfaces.Describing;

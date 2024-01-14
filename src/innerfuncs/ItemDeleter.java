@@ -1,4 +1,4 @@
-package src.innerFuncs;
+package src.innerfuncs;
 
 import src.objects.Item;
 import src.objects.Person;

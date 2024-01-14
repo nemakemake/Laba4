@@ -1,7 +1,7 @@
 package src.table.actions;
 
 import src.enums.Condition;
-import src.innerFuncs.QualityChange;
+import src.innerfuncs.QualityChange;
 import src.objects.Action;
 import src.objects.Person;
 

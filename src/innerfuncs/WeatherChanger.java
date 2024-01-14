@@ -1,4 +1,4 @@
-package src.innerFuncs;
+package src.innerfuncs;
 
 import src.enums.Weather;
 import src.objects.Nature;

@@ -1,6 +1,6 @@
 package src.table.actions;
 
-import src.innerFuncs.ItemAdditor;
+import src.innerfuncs.ItemAdditor;
 import src.interfaces.Describing;
 import src.objects.Action;
 import src.objects.Item;

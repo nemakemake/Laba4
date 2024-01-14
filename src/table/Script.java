@@ -2,7 +2,7 @@ package src.table;
 
 import src.enums.Condition;
 import src.enums.Weather;
-import src.innerFuncs.*;
+import src.innerfuncs.*;
 import src.interfaces.ScriptInfo;
 import src.objects.Item;
 import src.objects.Nature;

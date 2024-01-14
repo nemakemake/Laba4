@@ -1,4 +1,4 @@
-package src.innerFuncs;
+package src.innerfuncs;
 
 import src.enums.Condition;
 import src.objects.Nature;

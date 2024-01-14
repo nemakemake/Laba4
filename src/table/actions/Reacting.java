@@ -1,6 +1,6 @@
 package src.table.actions;
 
-import src.innerFuncs.RPSGame;
+import src.innerfuncs.RPSGame;
 import src.objects.Action;
 import src.objects.Person;
 
