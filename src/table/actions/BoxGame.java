@@ -22,14 +22,14 @@ public class BoxGame extends Action{
             }
             final LinkedList<Item> box = createMysteryBox();
         }
-        CreateMysteryBox cMB = new CreateMysteryBox();
+        CreateMysteryBox createMysteryBox = new CreateMysteryBox();
         Random random = new Random();
         boolean decision = random.nextBoolean();
         System.out.println(p1 + ": у меня в мешке есть два мячика двух возможных цветов\n"+p2+ ", что ты выберешь? Они там одинаковые или нет?" );
         if (decision){
             System.out.println(p2 + ": Одинаковые!");
         } else System.out.println(p2 + ": Разные!");
-        if (cMB.box.getFirst().equals(cMB.box.getLast())){
+        if (createMysteryBox.box.getFirst().equals(createMysteryBox.box.getLast())){
             if (decision) {System.out.println(p1 + ": ты угадал!");
             } else {System.out.println(p1 + ": ты не угадал!");}
         } else {

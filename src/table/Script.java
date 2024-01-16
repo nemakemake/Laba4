@@ -8,8 +8,11 @@ import src.interfaces.ItemManager;
 import src.interfaces.ScriptInfo;
 import src.objects.Item;
 import src.objects.Nature;
+import src.objects.Person;
 import src.table.actions.*;
 import src.table.actors.*;
+
+import java.lang.reflect.Method;
 
 
 public class Script implements ItemManager, GroupManager {
@@ -43,7 +46,6 @@ public class Script implements ItemManager, GroupManager {
     public String getName() {
         return name;
     }
-
     ScriptInfo scriptInfo = new ScriptInfo() {
         @Override
         public void scriptInfo(Script script) {
