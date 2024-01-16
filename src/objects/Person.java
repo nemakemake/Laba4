@@ -39,11 +39,11 @@ public class Person extends UObject{
         this.power = power;
     }
 
-    public int getHP() {
+    public int getHp() {
         return HP;
     }
 
-    public void setHP(int HP) {
+    public void setHp(int HP) {
         this.HP = HP;
     }
 }

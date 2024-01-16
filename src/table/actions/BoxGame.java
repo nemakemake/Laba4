@@ -24,16 +24,16 @@ public class BoxGame extends Action{
         }
         CreateMysteryBox cMB = new CreateMysteryBox();
         Random random = new Random();
-        boolean vibor = random.nextBoolean();
+        boolean decision = random.nextBoolean();
         System.out.println(p1 + ": у меня в мешке есть два мячика двух возможных цветов\n"+p2+ ", что ты выберешь? Они там одинаковые или нет?" );
-        if (vibor){
+        if (decision){
             System.out.println(p2 + ": Одинаковые!");
         } else System.out.println(p2 + ": Разные!");
         if (cMB.box.getFirst().equals(cMB.box.getLast())){
-            if (vibor) {System.out.println(p1 + ": ты угадал!");
+            if (decision) {System.out.println(p1 + ": ты угадал!");
             } else {System.out.println(p1 + ": ты не угадал!");}
         } else {
-            if (vibor) {System.out.println(p1 + ": ты не угадал!");
+            if (decision) {System.out.println(p1 + ": ты не угадал!");
             } else {System.out.println(p1 + ": ты угадал!");}
         }
     }

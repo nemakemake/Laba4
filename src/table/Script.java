@@ -3,6 +3,8 @@ package src.table;
 import src.enums.Condition;
 import src.enums.Weather;
 import src.innerfuncs.*;
+import src.interfaces.GroupManager;
+import src.interfaces.ItemManager;
 import src.interfaces.ScriptInfo;
 import src.objects.Item;
 import src.objects.Nature;
@@ -10,7 +12,7 @@ import src.table.actions.*;
 import src.table.actors.*;
 
 
-public class Script {
+public class Script implements ItemManager, GroupManager {
     //scriptInfo
     private String name;
 
@@ -27,8 +29,8 @@ public class Script {
     Item book = new Item("книжка Элли", Condition.NORMAL);
 
     // actions
-    PoopWakeUp pWU = new PoopWakeUp();
-    ClotheChanging chC = new ClotheChanging();
+    PoopWakeUp poopWakeUp = new PoopWakeUp();
+    ClotheChanging clotheChanging = new ClotheChanging();
     PlayingWith playWith = new PlayingWith();
     Remember remember = new Remember();
     Saying say = new Saying();
@@ -53,27 +55,27 @@ public class Script {
         scriptInfo.scriptInfo(this);
         PersonCreator.createPerson();
         Nature.WeatherForecast.printInfo();
-        GroupAdditor.addTo(luis, Groups.getHomeGroup());
-        GroupAdditor.addTo(gadge, Groups.getHomeGroup());
-        GroupAdditor.addTo(rachel, Groups.getHomeGroup());
-        GroupAdditor.addTo(ellie, Groups.getHomeGroup());
-        GroupAdditor.addTo(jude, Groups.getOutGroup());
+        addTo(luis, Groups.getHomeGroup());
+        addTo(gadge, Groups.getHomeGroup());
+        addTo(rachel, Groups.getHomeGroup());
+        addTo(ellie, Groups.getHomeGroup());
+        addTo(jude, Groups.getOutGroup());
         TimeSkipper.timeSkip(41, true);
-        GroupInfo.printInfo(Groups.getHomeGroup());
+        printInfo(Groups.getHomeGroup());
         TimeSkipper.timeSkip(40,true);
         QualityChange.changeQuality(Condition.SLEEP, gadge, true);
         Groups.changeGroup(rachel);
         Groups.changeGroup(ellie);
         Item.Car car = (Item.Car)jude.getInventory().getFirst();
         car.drive(Groups.getOutGroup(), jude, "магазин");
-        pWU.poopWakeUp(gadge, gadge.getInventory().get(0));
-        chC.changeClothes(luis, gadge, gadge.getInventory().get(0));
+        poopWakeUp.poopWakeUp(gadge, gadge.getInventory().get(0));
+        clotheChanging.changeClothes(luis, gadge, gadge.getInventory().get(0));
         playWith.playWith(luis, gadge);
         WeatherChanger.changeWeather(Weather.WINDY);
         remember.remember(luis, kite);
         say.say(luis, luis.call(gadge));
-        ItemAdditor.addItem(gadge, crayon);
-        ItemAdditor.addItem(gadge, book);
+        addItem(gadge, crayon);
+        addItem(gadge, book);
         drawing.draw(gadge, gadge.getInventory().get(2),  gadge.getInventory().get(1));
         thinking.think(luis, "еще один шаг, питающий детскую ревность");
         say.say(gadge, "Что?");

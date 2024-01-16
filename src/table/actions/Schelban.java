@@ -11,7 +11,7 @@ public class Schelban {
         Random random = new Random();
         System.out.println(p1 + " дает щелбан " + p2);
         int dmg = p1.getPower() + (int)(random.nextDouble()*10);
-        Groups.getAllGroup().get(b).setHP(p2.getHP() - dmg);
+        Groups.getAllGroup().get(b).setHp(p2.getHp() - dmg);
         System.out.println("-> " + p2 + " получает " + dmg + " урона");
     }
 }
