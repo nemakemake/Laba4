@@ -22,7 +22,6 @@ public interface ItemManager {
         System.out.println("-> Состояние " + i1 + " стало на " + damage + " меньше");
         if (i1.getQua() <= 0) {
             System.out.println("-> Состояние " + i1 + " меньше нуля. " + i1+ " уничтожен");
-            delItem(p1,i1, false);
         }
     }
 }

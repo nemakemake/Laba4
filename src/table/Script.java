@@ -17,7 +17,7 @@ import java.lang.reflect.Method;
 
 public class Script implements ItemManager, GroupManager {
     //scriptInfo
-    private String name;
+    private final String name;
 
     //actors
     Luis luis = new Luis("Луис", Condition.NORMAL);
