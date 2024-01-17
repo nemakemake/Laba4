@@ -10,9 +10,9 @@ import java.util.GregorianCalendar;
 public class ConditionCheck {
     public static void checkCondition(){
         for (Person p: Groups.getAllGroup()){
-            if (p.getCondition().lenght != 0){
+            if (p.getCondition().LENGHT != 0){
                 GregorianCalendar prop = p.getEffectTime();
-                prop.add(GregorianCalendar.DAY_OF_YEAR, p.getCondition().lenght);
+                prop.add(GregorianCalendar.DAY_OF_YEAR, p.getCondition().LENGHT);
                 if (Nature.getGlobalTime().after(prop)){
                     int i;
                     switch (p.getCondition()){

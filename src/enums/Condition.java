@@ -10,16 +10,16 @@ public enum Condition {
     NORMAL("", 0),
     OLD("старый ", 0);
 
-    public final String name;
-    public final int lenght;
+    public final String NAME;
+    public final int LENGHT;
 
-    Condition(String name, int lenght){
-        this.name = name;
-        this.lenght = lenght;
+    Condition(String name, int LENGHT){
+        this.NAME = name;
+        this.LENGHT = LENGHT;
     }
 
     @Override
     public String toString() {
-        return name;
+        return NAME;
     }
 }

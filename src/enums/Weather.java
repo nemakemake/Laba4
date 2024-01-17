@@ -9,13 +9,13 @@ public enum Weather {
     CLOUDY,
     RAINY;
 
-    private static final List<Weather> values =
+    private static final List<Weather> VALUES =
             List.of(values());
-    private static final int SIZE = values.size();
-    private static final Random random = new Random();
+    private static final int SIZE = VALUES.size();
+    private static final Random RANDOM = new Random();
 
     public static Weather randomWeather()  {
-        return values.get(random.nextInt(SIZE));
+        return VALUES.get(RANDOM.nextInt(SIZE));
     }
 }
 

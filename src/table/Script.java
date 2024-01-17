@@ -17,14 +17,15 @@ import java.lang.reflect.Method;
 
 public class Script implements ItemManager, GroupManager {
     //scriptInfo
-    private final String name;
+    private final String NAME;
+
 
     //actors
-    Luis luis = new Luis("Луис", Condition.NORMAL);
-    Gadge gadge = new Gadge("Гэдж", Condition.NORMAL);
-    Jude jude = new Jude("Джуд", Condition.LIGHT_SORROW);
-    Rachel rachel = new Rachel("Рошель", Condition.NORMAL);
-    Ellie ellie = new Ellie("Элли", Condition.NORMAL);
+    Luis luis = new Luis(Condition.NORMAL);
+    Gadge gadge = new Gadge(Condition.NORMAL);
+    Jude jude = new Jude(Condition.LIGHT_SORROW);
+    Rachel rachel = new Rachel(Condition.NORMAL);
+    Ellie ellie = new Ellie(Condition.NORMAL);
 
     //items
     Item kite = new Item("воздушный змей", Condition.NORMAL);
@@ -41,10 +42,10 @@ public class Script implements ItemManager, GroupManager {
     Thinking thinking = new Thinking();
     StunningSpeak stunningSpeak = new StunningSpeak();
 
-    public Script(String name){ this.name = name;}
+    public Script(String name){ this.NAME = name;}
 
     public String getName() {
-        return name;
+        return NAME;
     }
     ScriptInfo scriptInfo = new ScriptInfo() {
         @Override

@@ -10,8 +10,9 @@ import src.interfaces.Describing;
 
 public class Drawing implements Describing, ItemManager {
     public void draw(Person painter, Item canvas, Item tool){
+        final int DRAWINGDAMAGE = 3;
         describe(painter + " рисовал в " + canvas +" с помощью "+ tool);
-        calculateDamage(painter, canvas, 3);
+        calculateDamage(painter, canvas, DRAWINGDAMAGE);
         QualityChange.changeQuality(Condition.DIRTY, painter, canvas, true);
         InventoryChanger.changeInventory(painter,2, canvas);
     }

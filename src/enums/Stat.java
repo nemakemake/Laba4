@@ -4,11 +4,11 @@ public enum Stat {
     HP(1),
     POWER(2);
 
-    private final int errorCode;
+    private final int ERRORCODE;
     Stat(int errorCode){
-        this.errorCode = errorCode;
+        this.ERRORCODE = errorCode;
     }
-    public int getErrorCode(){
-        return this.errorCode;
+    public int getERRORCODE(){
+        return this.ERRORCODE;
     }
 }

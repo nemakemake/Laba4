@@ -14,8 +14,9 @@ public class Person extends UObject{
         super(name, condition);
         this.driverLicense = driverLicense;
         try {
-            if (HP <= 0){throw UnrealStatException.getException(1);}
-            if (power < 0){throw UnrealStatException.getException(2);}
+            final int ZERO = 0;
+            if (HP <= ZERO){throw UnrealStatException.getException(1);}
+            if (power < ZERO){throw UnrealStatException.getException(2);}
             this.HP = HP;
             this.power = power;
         } catch (UnrealStatException e){

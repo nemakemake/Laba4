@@ -8,15 +8,15 @@ public enum RPS {
     SCISSORS("ножницы"),
     DRAW("НИЧЬЯ");
 
-    public final String name;
+    public final String NAME;
 
-    RPS(String name) {
-        this.name = name;
+    RPS(String NAME) {
+        this.NAME = NAME;
     }
 
     @Override
     public String toString() {
-        return this.name;
+        return this.NAME;
     }
 
     public static RPS randomRPS(){

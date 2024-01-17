@@ -7,12 +7,12 @@ import src.objects.Person;
 
 public class Gadge extends Person implements Calling {
     private Item pants = new Item("штанишки", Condition.NORMAL);
-    public Gadge(String name, Condition condition){
-        super(name, condition, 30, 5, false);
+    public Gadge(Condition condition){
+        super("Гэдж", condition, 30, 5, false);
         this.inventory.add(pants);
     }
-    public Gadge(String name, Condition condition, int HP, int power){
-        super(name, condition, HP, power, false);
+    public Gadge(Condition condition, int HP, int power){
+        super("Гэдж", condition, HP, power, false);
         this.inventory.add(pants);
     }
 

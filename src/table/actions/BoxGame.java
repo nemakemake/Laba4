@@ -20,7 +20,7 @@ public class BoxGame extends Action{
                 box.add(ball2);
                 return box;
             }
-            final LinkedList<Item> box = createMysteryBox();
+            final LinkedList<Item> BOX = createMysteryBox();
         }
         CreateMysteryBox createMysteryBox = new CreateMysteryBox();
         Random random = new Random();
@@ -29,7 +29,7 @@ public class BoxGame extends Action{
         if (decision){
             System.out.println(player2 + ": Одинаковые!");
         } else System.out.println(player2 + ": Разные!");
-        if (createMysteryBox.box.getFirst().equals(createMysteryBox.box.getLast())){
+        if (createMysteryBox.BOX.getFirst().equals(createMysteryBox.BOX.getLast())){
             if (decision) {System.out.println(player1 + ": ты угадал!");
             } else {System.out.println(player1 + ": ты не угадал!");}
         } else {
