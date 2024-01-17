@@ -1,6 +1,8 @@
 package src.table.actions;
 
 import src.enums.Condition;
+import src.enums.ItemType;
+import src.exceptions.WrongWayOfUsingException;
 import src.innerfuncs.QualityChange;
 import src.innerfuncs.InventoryChanger;
 import src.interfaces.ItemManager;
@@ -10,10 +12,18 @@ import src.interfaces.Describing;
 
 public class Drawing implements Describing, ItemManager {
     public void draw(Person painter, Item canvas, Item tool){
-        final int DRAWINGDAMAGE = 3;
-        describe(painter + " рисовал в " + canvas +" с помощью "+ tool);
-        calculateDamage(painter, canvas, DRAWINGDAMAGE);
-        QualityChange.changeQuality(Condition.DIRTY, painter, canvas, true);
-        InventoryChanger.changeInventory(painter,2, canvas);
+        try {
+            if (canvas.getType() != ItemType.CANVAS || tool.getType() != ItemType.DRAWINGTOOL){
+                throw new WrongWayOfUsingException(canvas + " или " + tool + " не предназначены для выполнения данной задачи");
+            }
+            final int DRAWINGDAMAGE = 3;
+            describe(painter + " рисовал в " + canvas + " с помощью " + tool);
+            calculateDamage(painter, canvas, DRAWINGDAMAGE);
+            QualityChange.changeQuality(Condition.DIRTY, painter, canvas, true);
+            InventoryChanger.changeInventory(painter, 2, canvas);
+        } catch (WrongWayOfUsingException exception){
+            System.out.println(exception.getMessage());
+            System.exit(1);
+        }
     }
 }

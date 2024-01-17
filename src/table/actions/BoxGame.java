@@ -1,6 +1,7 @@
 package src.table.actions;
 
 import src.enums.Condition;
+import src.enums.ItemType;
 import src.objects.Action;
 import src.objects.Item;
 import src.objects.Person;
@@ -14,8 +15,8 @@ public class BoxGame extends Action{
             LinkedList<Item> createMysteryBox(){
                 Random random = new Random();
                 LinkedList<Item> box = new LinkedList<>();
-                Item ball1 = new Item("myach"+ random.nextInt(1), Condition.NORMAL);
-                Item ball2 = new Item("myach"+random.nextInt(1), Condition.NORMAL);
+                Item ball1 = new Item("myach"+ random.nextInt(1), ItemType.TOY, Condition.NORMAL);
+                Item ball2 = new Item("myach"+random.nextInt(1), ItemType.TOY,Condition.NORMAL);
                 box.add(ball1);
                 box.add(ball2);
                 return box;

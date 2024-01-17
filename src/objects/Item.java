@@ -1,16 +1,22 @@
 package src.objects;
 
 import src.enums.Condition;
+import src.enums.ItemType;
 import src.exceptions.DriverLicenseException;
 
 import java.util.LinkedList;
 
 public class Item extends UObject{
     private int quality;
-
-    public Item(String name, Condition condition){
+    private final ItemType type;
+    public Item(String name, ItemType type, Condition condition){
         super(name, condition);
         this.quality = 5;
+        this.type = type;
+    }
+
+    public ItemType getType() {
+        return type;
     }
 
     public int getQuality() {
@@ -23,7 +29,7 @@ public class Item extends UObject{
 
     public class Car extends Item {
         public Car(String name, Condition condition) {
-            super(name, condition);
+            super(name,ItemType.TRANSPORT,condition);
         }
         public void drive(LinkedList<Person> passengers, Person person, String target){
             try{
@@ -37,6 +43,7 @@ public class Item extends UObject{
             }
             catch(DriverLicenseException error) {
                     System.out.println(error.getMessage());
+                    System.exit(1);
                 }
             }
         }

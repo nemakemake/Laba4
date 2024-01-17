@@ -1,7 +1,9 @@
 package src.table;
 
 import src.enums.Condition;
+import src.enums.ItemType;
 import src.enums.Weather;
+import src.exceptions.WrongWayOfUsingException;
 import src.innerfuncs.*;
 import src.interfaces.GroupManager;
 import src.interfaces.ItemManager;
@@ -28,9 +30,9 @@ public class Script implements ItemManager, GroupManager {
     Ellie ellie = new Ellie(Condition.NORMAL);
 
     //items
-    Item kite = new Item("воздушный змей", Condition.NORMAL);
-    Item crayon = new Item("цветные фломастеры", Condition.NORMAL);
-    Item book = new Item("книжка Элли", Condition.NORMAL);
+    Item kite = new Item("воздушный змей", ItemType.TOY, Condition.NORMAL);
+    Item crayon = new Item("цветные фломастеры",ItemType.DRAWINGTOOL ,Condition.NORMAL);
+    Item book = new Item("книжка Элли",ItemType.CANVAS ,Condition.NORMAL);
 
     // actions
     PoopWakeUp poopWakeUp = new PoopWakeUp();
@@ -54,7 +56,7 @@ public class Script implements ItemManager, GroupManager {
         }
     };
 
-    public void printScript() {
+    public void printScript() throws WrongWayOfUsingException {
         scriptInfo.scriptInfo(this);
         //PersonCreator.createPerson();
         Nature.WeatherForecast.printInfo();
@@ -77,7 +79,7 @@ public class Script implements ItemManager, GroupManager {
         WeatherChanger.changeWeather(Weather.WINDY);
         remember.remember(luis, kite);
         say.say(luis, luis.call(gadge));
-        addItem(gadge, crayon);
+        addItem(gadge, book);
         addItem(gadge, book);
         drawing.draw(gadge, gadge.getInventory().get(2),  gadge.getInventory().get(1));
         thinking.think(luis, "еще один шаг, питающий детскую ревность");

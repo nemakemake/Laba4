@@ -1,12 +1,13 @@
 package src.table.actors;
 
 import src.enums.Condition;
+import src.enums.ItemType;
 import src.interfaces.Calling;
 import src.objects.Item;
 import src.objects.Person;
 
 public class Jude extends Person implements Calling {
-    private Item.Car pikap = new Item(" ", Condition.NORMAL).new Car("пикап", Condition.OLD);
+    private Item.Car pikap = new Item(" ", ItemType.TRANSPORT, Condition.NORMAL).new Car("пикап", Condition.OLD);
     public Jude(Condition condition){
         super("Джуд", condition, 80, 20, true);
         this.inventory.add(pikap);
