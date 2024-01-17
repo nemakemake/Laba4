@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.Random;
 
 public class BoxGame extends Action{
-    public static void setTheGame(Person p1, Person p2){
+    public static void setTheGame(Person player1, Person player2){
         class CreateMysteryBox {
             LinkedList<Item> createMysteryBox(){
                 Random random = new Random();
@@ -25,16 +25,16 @@ public class BoxGame extends Action{
         CreateMysteryBox createMysteryBox = new CreateMysteryBox();
         Random random = new Random();
         boolean decision = random.nextBoolean();
-        System.out.println(p1 + ": у меня в мешке есть два мячика двух возможных цветов\n"+p2+ ", что ты выберешь? Они там одинаковые или нет?" );
+        System.out.println(player1 + ": у меня в мешке есть два мячика двух возможных цветов\n"+player2+ ", что ты выберешь? Они там одинаковые или нет?" );
         if (decision){
-            System.out.println(p2 + ": Одинаковые!");
-        } else System.out.println(p2 + ": Разные!");
+            System.out.println(player2 + ": Одинаковые!");
+        } else System.out.println(player2 + ": Разные!");
         if (createMysteryBox.box.getFirst().equals(createMysteryBox.box.getLast())){
-            if (decision) {System.out.println(p1 + ": ты угадал!");
-            } else {System.out.println(p1 + ": ты не угадал!");}
+            if (decision) {System.out.println(player1 + ": ты угадал!");
+            } else {System.out.println(player1 + ": ты не угадал!");}
         } else {
-            if (decision) {System.out.println(p1 + ": ты не угадал!");
-            } else {System.out.println(p1 + ": ты угадал!");}
+            if (decision) {System.out.println(player1 + ": ты не угадал!");
+            } else {System.out.println(player1 + ": ты угадал!");}
         }
     }
 }

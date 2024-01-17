@@ -6,12 +6,12 @@ import src.table.Groups;
 import java.util.Random;
 
 public class Schelban {
-    public static void schelban(Person p1, Person p2){
-        int b = Groups.getAllGroup().indexOf(p2);
+    public static void schelban(Person hitman, Person victim){
+        int victimId = Groups.getAllGroup().indexOf(victim);
         Random random = new Random();
-        System.out.println(p1 + " дает щелбан " + p2);
-        int dmg = p1.getPower() + (int)(random.nextDouble()*10);
-        Groups.getAllGroup().get(b).setHp(p2.getHp() - dmg);
-        System.out.println("-> " + p2 + " получает " + dmg + " урона");
+        System.out.println(hitman + " дает щелбан " + victim);
+        int dmg = hitman.getPower() + (int)(random.nextDouble()*10);
+        Groups.getAllGroup().get(victimId).setHp(victim.getHp() - dmg);
+        System.out.println("-> " + victim + " получает " + dmg + " урона");
     }
 }

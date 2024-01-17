@@ -17,5 +17,5 @@ public class Jude extends Person implements Calling {
         this.inventory.add(pikap);
     }
 
-    public String call(Person p) {return "послушай меня, " + p;}
+    public String call(Person person) {return "послушай меня, " + person;}
 }

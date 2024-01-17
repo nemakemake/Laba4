@@ -8,9 +8,9 @@ import src.objects.Person;
 
 public class Stunned extends Action {
 
-    public static void stunned(Person p1, String t1) {
+    public static void stunned(Person person, String text) {
         Thinking thinking = new Thinking();
-        thinking.think(p1, t1);
-        QualityChange.changeQuality(Condition.STUNNED, p1, true);
+        thinking.think(person, text);
+        QualityChange.changeQuality(Condition.STUNNED, person, true);
     }
 }

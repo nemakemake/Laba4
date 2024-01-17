@@ -8,12 +8,12 @@ import java.util.Objects;
 public abstract class UObject {
     protected String name;
     protected Condition condition;
-    protected GregorianCalendar effTime;
+    protected GregorianCalendar effectTime;
 
     public UObject(String name, Condition condition){
         this.name = name;
         this.condition = condition;
-        this.effTime = (GregorianCalendar) Nature.getGlobTime().clone();
+        this.effectTime = (GregorianCalendar) Nature.getGlobalTime().clone();
     }
 
     public String getName() {
@@ -24,12 +24,12 @@ public abstract class UObject {
         this.name = name;
     }
 
-    public GregorianCalendar getEffTime() {
-        return effTime;
+    public GregorianCalendar getEffectTime() {
+        return effectTime;
     }
 
-    public void setEffTime(GregorianCalendar effTime) {
-        this.effTime = effTime;
+    public void setEffectTime(GregorianCalendar effectTime) {
+        this.effectTime = effectTime;
     }
 
     public Condition getCondition() {

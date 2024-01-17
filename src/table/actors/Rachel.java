@@ -16,5 +16,5 @@ public class Rachel extends Person implements Calling {
         super(name, condition, HP, power, true);
         this.inventory.add(mashina);
     }
-    public String call(Person p) {return "слушай, " + p;}
+    public String call(Person person) {return "слушай, " + person;}
 }

@@ -9,33 +9,33 @@ import src.table.Groups;
 import java.util.GregorianCalendar;
 
 public class QualityChange {
-    public static void changeQuality(Condition condition, Person p, boolean describe) {
-        String old = p.toString();
-        int i = Groups.getAllGroup().indexOf(p);
-        Groups.getAllGroup().get(i).setEffTime((GregorianCalendar) Nature.getGlobTime().clone());
+    public static void changeQuality(Condition condition, Person person, boolean describe) {
+        String old = person.toString();
+        int i = Groups.getAllGroup().indexOf(person);
+        Groups.getAllGroup().get(i).setEffectTime((GregorianCalendar) Nature.getGlobalTime().clone());
         Groups.getAllGroup().get(i).setCondition(condition);
-        if (describe) System.out.println("-> " + old + " стал " + p);
+        if (describe) System.out.println("-> " + old + " стал " + person);
 
     }
 
-    public static void changeQuality(Condition condition, Person p, Item item, boolean describe){
+    public static void changeQuality(Condition condition, Person person, Item item, boolean describe){
         String old = item.toString();
-        int i = p.getInventory().indexOf(item);
-        p.getInventory().get(i).setEffTime((GregorianCalendar) Nature.getGlobTime().clone());
-        p.getInventory().get(i).setCondition(condition);
+        int i = person.getInventory().indexOf(item);
+        person.getInventory().get(i).setEffectTime((GregorianCalendar) Nature.getGlobalTime().clone());
+        person.getInventory().get(i).setCondition(condition);
         if (describe) {
-            System.out.println("-> " + old + " стал " + p.getInventory().get(i));
+            System.out.println("-> " + old + " стал " + person.getInventory().get(i));
         }
     }
 
 
-    public static void changeQuality(Condition condition, Person o, GregorianCalendar calendar, boolean describe){
-        String old = o.toString();
-        int i = Groups.getAllGroup().indexOf(o);
-        Groups.getAllGroup().get(i).setEffTime(calendar);
+    public static void changeQuality(Condition condition, Person person, GregorianCalendar calendar, boolean describe){
+        String old = person.toString();
+        int i = Groups.getAllGroup().indexOf(person);
+        Groups.getAllGroup().get(i).setEffectTime(calendar);
         Groups.getAllGroup().get(i).setCondition(condition);
         if (describe){
-            System.out.println("-> " + old + " стал " + o);
+            System.out.println("-> " + old + " стал " + person);
         }
     }
 }

@@ -11,9 +11,9 @@ public class ConditionCheck {
     public static void checkCondition(){
         for (Person p: Groups.getAllGroup()){
             if (p.getCondition().lenght != 0){
-                GregorianCalendar prop = p.getEffTime();
+                GregorianCalendar prop = p.getEffectTime();
                 prop.add(GregorianCalendar.DAY_OF_YEAR, p.getCondition().lenght);
-                if (Nature.getGlobTime().after(prop)){
+                if (Nature.getGlobalTime().after(prop)){
                     int i;
                     switch (p.getCondition()){
                         case SORROW:

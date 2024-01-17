@@ -4,9 +4,9 @@ import src.objects.Action;
 import src.objects.Person;
 
 public class Ignoring extends Action {
-    public static void ignore(Person p1, Person p2){
-        System.out.println(p1 + " игнорировал " + p2);
-        System.out.println(p2 + " пытается привлечь внимание другим способом");
-        BoxGame.setTheGame(p2, p1);
+    public static void ignore(Person ignoramus, Person speaker){
+        System.out.println(ignoramus + " игнорировал " + speaker);
+        System.out.println(speaker + " пытается привлечь внимание другим способом");
+        BoxGame.setTheGame(speaker, ignoramus);
     }
 }

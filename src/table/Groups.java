@@ -9,13 +9,13 @@ public class Groups {
     private static LinkedList<Person> outGroup = new LinkedList<>();
     private static LinkedList<Person> allGroup = new LinkedList<>();
 
-    public static void changeGroup(Person p1){
-        if (outGroup.contains(p1)) {
-            outGroup.remove(p1);
-            homeGroup.add(p1);
+    public static void changeGroup(Person person){
+        if (outGroup.contains(person)) {
+            outGroup.remove(person);
+            homeGroup.add(person);
         } else {
-            homeGroup.remove(p1);
-            outGroup.add(p1);
+            homeGroup.remove(person);
+            outGroup.add(person);
         }
     }
 

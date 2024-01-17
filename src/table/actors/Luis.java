@@ -17,5 +17,5 @@ public class Luis extends Person implements Calling {
         inventory.add(repants);
     }
 
-    public String call(Person p) {return "эй, " + p;}
+    public String call(Person person) {return "эй, " + person;}
 }

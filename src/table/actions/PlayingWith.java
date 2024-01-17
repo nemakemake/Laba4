@@ -8,15 +8,15 @@ import java.util.Random;
 
 public class PlayingWith extends Action implements Describing {
     private final Random rnd = new Random();
-    public void playWith(Person p1, Person p2){
-        System.out.println(p1 + " игрался c "+ p2);
+    public void playWith(Person player1, Person player2){
+        System.out.println(player1 + " игрался c "+ player2);
         double CHANCE = 0.5;
         if (rnd.nextDouble() < CHANCE) {
             System.out.print("-> Неудача: ");
-            Ignoring.ignore(p2, p1);
+            Ignoring.ignore(player2, player1);
         } else {
             System.out.print("-> Удача: ");
-            Reacting.react(p2, p1);
+            Reacting.react(player2, player1);
         }
     }
 }

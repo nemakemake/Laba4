@@ -2,15 +2,15 @@ package src.interfaces;
 
 public interface Describing {
 
-    default void describe(String t){
-        System.out.println(t);
+    default void describe(String text){
+        System.out.println(text);
     }
 
-    default String toQuote(String t) {
-        return " подумал: '" + t + "'";
+    default String toQuote(String text) {
+        return " подумал: '" + text + "'";
     }
 
-    default String toSay (String t){
-        return " сказал: " + t;
+    default String toSay (String text){
+        return " сказал: " + text;
     }
 }

@@ -55,7 +55,7 @@ public class Script implements ItemManager, GroupManager {
 
     public void printScript() {
         scriptInfo.scriptInfo(this);
-        PersonCreator.createPerson();
+        //PersonCreator.createPerson();
         Nature.WeatherForecast.printInfo();
         addTo(luis, Groups.getHomeGroup());
         addTo(gadge, Groups.getHomeGroup());

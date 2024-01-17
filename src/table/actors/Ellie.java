@@ -12,5 +12,5 @@ public class Ellie extends Person implements Calling {
     public Ellie(String name, Condition condition, int HP, int power){
         super(name, condition, HP, power, false);
     }
-    public String call(Person p) {return "хэй ты, " + p;}
+    public String call(Person person) {return "хэй ты, " + person;}
 }

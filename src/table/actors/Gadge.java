@@ -16,5 +16,5 @@ public class Gadge extends Person implements Calling {
         this.inventory.add(pants);
     }
 
-    public String call(Person p) {return "эй эй " + p + "!";}
+    public String call(Person person) {return "эй эй " + person + "!";}
 }

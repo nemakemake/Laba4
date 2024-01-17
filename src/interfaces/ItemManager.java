@@ -5,23 +5,23 @@ import src.objects.Person;
 import src.table.Groups;
 
 public interface ItemManager {
-    default void delItem(Person p, Item i, boolean describe){
-        if (describe) System.out.println("-> " + p + " потратил " + i);
-        int ii = Groups.getAllGroup().indexOf(p);
-        Groups.getAllGroup().get(ii).getInventory().remove(i);
+    default void delItem(Person person, Item item, boolean describe){
+        if (describe) System.out.println("-> " + person + " потратил " + item);
+        int ii = Groups.getAllGroup().indexOf(person);
+        Groups.getAllGroup().get(ii).getInventory().remove(item);
     }
 
-    default void addItem(Person p, Item i) {
-        int ii = Groups.getAllGroup().indexOf(p);
-        Groups.getAllGroup().get(ii).getInventory().add(i);
-        System.out.println("-> " + p + " получил "+ i);
+    default void addItem(Person person, Item item) {
+        int ii = Groups.getAllGroup().indexOf(person);
+        Groups.getAllGroup().get(ii).getInventory().add(item);
+        System.out.println("-> " + person + " получил "+ item);
     }
 
-    default void calculateDamage(Person p1, Item i1, int damage){
-        i1.setQua(i1.getQua() - damage);
-        System.out.println("-> Состояние " + i1 + " стало на " + damage + " меньше");
-        if (i1.getQua() <= 0) {
-            System.out.println("-> Состояние " + i1 + " меньше нуля. " + i1+ " уничтожен");
+    default void calculateDamage(Person person, Item item, int damage){
+        item.setQuality(item.getQuality() - damage);
+        System.out.println("-> Состояние " + item + " стало на " + damage + " меньше");
+        if (item.getQuality() <= 0) {
+            System.out.println("-> Состояние " + item + " меньше нуля. " + item+ " уничтожен");
         }
     }
 }

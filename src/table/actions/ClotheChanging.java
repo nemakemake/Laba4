@@ -9,9 +9,9 @@ import src.objects.Person;
 
 
 public class ClotheChanging extends Action implements Describing, ItemManager {
-    public void changeClothes(Person p1, Person p2, Item i1){
-        describe(p1 + " поменял " + p2.getInventory().get(0) +" "+ p2);
-        delItem(p1, i1, false);
-        InventoryChanger.changeInventory(p2,0, i1);
+    public void changeClothes(Person changer, Person whosClothes, Item i1){
+        describe(changer + " поменял " + whosClothes.getInventory().get(0) +" "+ whosClothes);
+        delItem(changer, i1, false);
+        InventoryChanger.changeInventory(whosClothes,0, i1);
     }
 }

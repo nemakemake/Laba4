@@ -5,7 +5,7 @@ import src.objects.Action;
 import src.objects.Person;
 
 public class Thinking extends Action implements Describing {
-    public void think(Person p1, String t1){
-        describe(p1 + toQuote(t1));
+    public void think(Person person, String text){
+        describe(person + toQuote(text));
     }
 }

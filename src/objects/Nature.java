@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
 
 public class Nature {
     private static Weather weather = Weather.SUNNY;
-    private static GregorianCalendar globTime = new GregorianCalendar(1984, GregorianCalendar.JANUARY, 2);
+    private static GregorianCalendar globalTime = new GregorianCalendar(1984, GregorianCalendar.JANUARY, 2);
     private static final GregorianCalendar doomday = new GregorianCalendar(1984, GregorianCalendar.MAY, 12);
 
     public static GregorianCalendar getDoomday() {
@@ -24,20 +24,20 @@ public class Nature {
         Nature.weather = weather;
     }
 
-    public static GregorianCalendar getGlobTime() {
-        return globTime;
+    public static GregorianCalendar getGlobalTime() {
+        return globalTime;
     }
 
-    public static void setGlobTime(GregorianCalendar globTime) {
-        Nature.globTime = globTime;
+    public static void setGlobalTime(GregorianCalendar globalTime) {
+        Nature.globalTime = globalTime;
     }
 
     public static class WeatherForecast {
         public static void printInfo(){
-            int remains = doomday.get(Calendar.WEEK_OF_YEAR) - globTime.get(Calendar.WEEK_OF_YEAR);
-            System.out.println("\n-----\nДень недели: " + DayOfWeek.of(globTime.get(GregorianCalendar.DAY_OF_WEEK))
-                    + "\nДата: " + Month.of(globTime.get(GregorianCalendar.MONTH)+1) + " "
-                    + globTime.get(Calendar.DATE) + "\nПогода: " + weather +"\nДо рокового дня: "+
+            int remains = doomday.get(Calendar.WEEK_OF_YEAR) - globalTime.get(Calendar.WEEK_OF_YEAR);
+            System.out.println("\n-----\nДень недели: " + DayOfWeek.of(globalTime.get(GregorianCalendar.DAY_OF_WEEK))
+                    + "\nДата: " + Month.of(globalTime.get(GregorianCalendar.MONTH)+1) + " "
+                    + globalTime.get(Calendar.DATE) + "\nПогода: " + weather +"\nДо рокового дня: "+
                     remains+ " недель\n-----\n");
 
         }
