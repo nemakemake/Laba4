@@ -12,7 +12,9 @@ import src.objects.Person;
 import src.innerfuncs.*;
 
 public class PoopWakeUp extends Action implements Describing, ItemManager {
-    public void poopWakeUp(Person pooper, Item item){
+    ClotheChanging clotheChanging = new ClotheChanging();
+    PlayingWith playWith = new PlayingWith();
+    public void poopWakeUp(Person pooper, Person cleaner,Item item){
         try {
             if (item.getType() != ItemType.CLOTHE) {
                 throw new WrongWayOfUsingException(item + " не предназначен для выполнения данной задачи");
@@ -21,7 +23,9 @@ public class PoopWakeUp extends Action implements Describing, ItemManager {
             QualityChange.changeQuality(Condition.NORMAL, pooper, true);
             QualityChange.changeQuality(Condition.DIRTY, pooper, item, true);
             InventoryChanger.changeInventory(pooper, 0, item);
-            calculateDamage(pooper, item, 5);
+            calculateDamage(item, 5);
+            clotheChanging.changeClothes(cleaner, pooper, pooper.getInventory().get(0));
+            playWith.playWith(cleaner, pooper);
         } catch (WrongWayOfUsingException exception){
             System.out.println(exception.getMessage());
             System.exit(1);

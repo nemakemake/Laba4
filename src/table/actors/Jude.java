@@ -1,20 +1,20 @@
 package src.table.actors;
 
 import src.enums.Condition;
-import src.enums.ItemType;
+import src.enums.Location;
 import src.interfaces.Calling;
-import src.objects.Item;
+import src.objects.Car;
 import src.objects.Person;
 
 public class Jude extends Person implements Calling {
-    private Item.Car pikap = new Item(" ", ItemType.TRANSPORT, Condition.NORMAL).new Car("пикап", Condition.OLD);
-    public Jude(Condition condition){
-        super("Джуд", condition, 80, 20, true);
+    private Car pikap = new Car("пикап",Location.OUT ,Condition.OLD);
+    public Jude(Location location,Condition condition){
+        super("Джуд",location,condition, 80, 20, true);
         this.inventory.add(pikap);
     }
 
-    public Jude(Condition condition, int HP, int power){
-        super("Джуд", condition, HP, power, true);
+    public Jude(Condition condition, Location location, int HP, int power){
+        super("Джуд", location, condition, HP, power, true);
         this.inventory.add(pikap);
     }
 

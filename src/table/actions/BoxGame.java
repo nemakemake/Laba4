@@ -2,6 +2,7 @@ package src.table.actions;
 
 import src.enums.Condition;
 import src.enums.ItemType;
+import src.enums.Location;
 import src.objects.Action;
 import src.objects.Item;
 import src.objects.Person;
@@ -15,8 +16,8 @@ public class BoxGame extends Action{
             LinkedList<Item> createMysteryBox(){
                 Random random = new Random();
                 LinkedList<Item> box = new LinkedList<>();
-                Item ball1 = new Item("myach"+ random.nextInt(1), ItemType.TOY, Condition.NORMAL);
-                Item ball2 = new Item("myach"+random.nextInt(1), ItemType.TOY,Condition.NORMAL);
+                Item ball1 = new Item("myach"+ random.nextInt(1), Location.HOME,ItemType.TOY, Condition.NORMAL);
+                Item ball2 = new Item("myach"+random.nextInt(1), Location.HOME,ItemType.TOY,Condition.NORMAL);
                 box.add(ball1);
                 box.add(ball2);
                 return box;
@@ -26,6 +27,7 @@ public class BoxGame extends Action{
         CreateMysteryBox createMysteryBox = new CreateMysteryBox();
         Random random = new Random();
         boolean decision = random.nextBoolean();
+        player2.getIgnoreList().remove(player1);
         System.out.println(player1 + ": у меня в мешке есть два мячика двух возможных цветов\n"+player2+ ", что ты выберешь? Они там одинаковые или нет?" );
         if (decision){
             System.out.println(player2 + ": Одинаковые!");

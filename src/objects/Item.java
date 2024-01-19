@@ -2,17 +2,18 @@ package src.objects;
 
 import src.enums.Condition;
 import src.enums.ItemType;
-import src.exceptions.DriverLicenseException;
+import src.enums.Location;
+import src.interfaces.GroupManager;
 
-import java.util.LinkedList;
 
-public class Item extends UObject{
+public class Item extends UObject implements GroupManager {
     private int quality;
     private final ItemType type;
-    public Item(String name, ItemType type, Condition condition){
+    public Item(String name, Location location,ItemType type, Condition condition){
         super(name, condition);
         this.quality = 5;
         this.type = type;
+        addTo(this, location);
     }
 
     public ItemType getType() {
@@ -27,25 +28,5 @@ public class Item extends UObject{
         this.quality = quality;
     }
 
-    public class Car extends Item {
-        public Car(String name, Condition condition) {
-            super(name,ItemType.TRANSPORT,condition);
-        }
-        public void drive(LinkedList<Person> passengers, Person person, String target){
-            try{
-                if (!person.driverLicense){
-                    throw new DriverLicenseException(person + " не имеет водительских прав!");
-                }
-                passengers.remove(person);
-                System.out.print(person + " ехал на " + this + " с ");
-                passengers.stream().map(UObject::getName).map(x -> x + " ").forEach(System.out::print);
-                System.out.println("на борту в " + target);
-            }
-            catch(DriverLicenseException error) {
-                    System.out.println(error.getMessage());
-                    System.exit(1);
-                }
-            }
-        }
-    }
+}
 

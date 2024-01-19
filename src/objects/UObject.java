@@ -10,6 +10,7 @@ public abstract class UObject {
     protected Condition condition;
     protected GregorianCalendar effectTime;
 
+
     public UObject(String name, Condition condition){
         this.name = name;
         this.condition = condition;
